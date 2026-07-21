@@ -91,7 +91,7 @@ export default function Home() {
         {currentPuzzle.title}
       </h1>
       
-      <p className="text-lg mb-8 text-center max-w-md text-gray-100 whitespace-pre-line">
+      <p className="text-xs sm:text-sm md:text-lg mb-8 text-left w-full max-w-2xl text-gray-100 whitespace-pre-line px-2">
         {currentPuzzle.content}
       </p>
       
