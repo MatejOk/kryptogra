@@ -2,22 +2,39 @@
 
 import { useState } from "react";
 
-const puzzles = [
+type Puzzle = {
+  title: string;
+  content: string;
+  image?: string;
+  audio?: string;
+};
+
+const puzzles: Puzzle[] = [
   {
     title: "WITAJCIE W KRYPTOGRZE!",
     content: "Celem gry jest sprawdzenie waszych umiejętności z kryptografi i kryptoanalizy, ale bez obaw te trudne słowa to tylko przykyrwka na dobrze przez was znane przecież szyfry i sposoby kodowania danych prawda? Zobaczymy, w razie jakich kolwiek problemów zgłaszajcie się prosze od mistrza gry i aby rozpocząć musicie się zautoryzować wpisując podane wam wcześniej hasło"
   },
   {
     title: "1. NA POCZĄTEK...",
-    content: <>Zaczniemy od czegoś prostego co na pewno znacie - szyfry podstawieniowe czyli te które polegają na podstawianiu liter według pewnego klucza na inne litery lub ustalone znaki. Jest to najpopularniejszy typ szyfrów w naszym środowisku harceskim i skautowym. Są to  między innymi szyfry: czekoladka, gaderypoluki, malinowe buty, szyfr telefonowy czy szyfr cezara. <br /><br /> SZYFOGRAM: ACHTERSZTAG </>
+    content: "Zaczniemy od czegoś prostego co na pewno znacie - szyfry podstawieniowe czyli te które polegają na podstawianiu liter według pewnego klucza na inne litery lub ustalone znaki. Jest to najpopularniejszy typ szyfrów w naszym środowisku harceskim i skautowym. Są to  między innymi szyfry: czekoladka, gaderypoluki, malinowe buty, szyfr telefonowy czy szyfr cezara. \n" +
+    "SZYFOGRAM: ACHTERSZTAG"
   },
   {
     title: "2. Kod a Szyfr?",
-    content: <>Dla laików tematu jest to to samo, ale czy jest tak na pewno?<br/><br/> Otóż nie zaskoczę was ale NIE, to nie jest to samo.<br/><br/>SZYFROWANIE - jest to czynność polegająca na przekształacaniu tekstu jawnego do postaci nieczytelnej dla osób nie posiadających klucza.<br/><br/>KODOWANIE - zmiana zapisu danych tak żeby mogłby być łatwiej np. przesłane dalej, zapisane lub odczytane<br/><br/>Zatem odpowiedzią jest liczba: 1011010 zakodowana w systemie dziesiętnym :D </>
+    content: "Dla laików tematu jest to to samo, ale czy jest tak na pewno?\n"+
+    "Otóż nie zaskoczę was ale NIE, to nie jest to samo.\n"+
+    "SZYFROWANIE - jest to czynność polegająca na przekształacaniu tekstu jawnego do postaci nieczytelnej dla osób nie posiadających klucza.\n"+
+    "KODOWANIE - zmiana zapisu danych tak żeby mogłby być łatwiej np. przesłane dalej, zapisane lub odczytane\n"+
+    "Zatem odpowiedzią jest liczba: 1011010 zakodowana w systemie dziesiętnym :D"
   },
   {
     title: "3. Trochę Teorii",
-    content: <>Alfabet - Zbiór wszystkich dostępnych znaków (np. litery, cyfry, znaki specjalne), z których zbudowana jest wiadomość przed lub po zaszyfrowaniu.<br/><br/>Tekst jawny - Twoja oryginalna, czytelna wiadomość przed ukryciem. To zrozumiałe dane, które chcesz zabezpieczyć.<br/><br/> Szyfrogram - wynik procesu szyfrowania.<br/><br/>Szyfr - Konkretny algorytm matematyczny lub zbiór ścisłych reguł postępowania, które instruują, w jaki sposób zamienić tekst jawny na szyfrogram (i z powrotem).<br/><br/> Szyfrogram to "tekst jawny" a szyfrem jest szyfr cezara (o 3 litery w prawo ide podczas szyfrowania) z polskim alfabetem. <br/><br/> ps. polski alfabet ma 32 znaki</>
+    content: "Alfabet - Zbiór wszystkich dostępnych znaków (np. litery, cyfry, znaki specjalne), z których zbudowana jest wiadomość przed lub po zaszyfrowaniu.\n"+
+    "Tekst jawny - Twoja oryginalna, czytelna wiadomość przed ukryciem. To zrozumiałe dane, które chcesz zabezpieczyć.\n"+
+    "Szyfrogram - wynik procesu szyfrowania.\n"+
+    "Szyfr - Konkretny algorytm matematyczny lub zbiór ścisłych reguł postępowania, które instruują, w jaki sposób zamienić tekst jawny na szyfrogram (i z powrotem).\n"+
+    "Szyfrogram to `tekst jawny` a szyfrem jest szyfr cezara (o 3 litery w prawo ide podczas szyfrowania) z polskim alfabetem.\n"+
+    "ps. polski alfabet ma 32 znaki\n"
   },
   {
     title: "4. Steganografia",
@@ -54,18 +71,18 @@ const puzzles = [
     title: "8. Brawo!",
     content:"Zrozumiałeś jak działa szyfrowanie asymetryczne, oczywiście w faktycznych implemantacjach jest do szyfrowania używna arytmetyka modularna i duże liczby pierwsze dzięki czemu nasz klucz publiczny i prywanty jest równocześnie `kłódką i kluczem`. Dzięki matematycze właśnie działa mechanizm że wiadomość zaszyfrowana k. publicznym może być odszyfrowana tylko kluczem prywantym, i na odwrót (po prostu są to do siebie liczby odwrtone)\n" +
     "\n" +
-    "Inna sytuacja: Są 4 osoby: Alicja, Bob, Celina i Dariusz. Każdy ma swój klucz prywatny, oraz klucze publiczne reszty. Powiedzmy że Alicja Dariusz i Celina chcą aby Bob potwierdził że zapoznał się z umową którą otrzymał od reszty. Którym kluczem powien Bob zaszyfrować umowę aby wszytskie pozostałe osoby mogły ją odszyfrować i mieć pewność że tylko Bob mógł zaszyfrować tak tę umowę"
+    "Inna sytuacja: Są 4 osoby: Alicja, Bob, Celina i Dariusz. Każdy ma swój klucz prywatny, oraz klucze publiczne reszty. Powiedzmy że Alicja Dariusz i Celina chcą aby Bob potwierdził że zapoznał się z umową którą otrzymał od reszty. Którym kluczem powien Bob zaszyfrować umowę aby wszytskie pozostałe osoby mogły ją odszyfrować i mieć pewność że tylko Bob mógł zaszyfrować tak tę umowę. Jakim kluczem Bob powienien szyfrować?"
   },
    {
     title: "9. Tego na pewno nie pamiętasz",
     content:"Żeby szybko zaszyfrować dużą ilość danych użujesz..."
   },
   {
-    title: "10. funckje skrótu",
+    title: "10. opis podpisu",
     content:""
   },
    {
-    title: "11. a pamiętasz",
+    title: "11. funkcje skrótu",
     content:""
   },
    {
