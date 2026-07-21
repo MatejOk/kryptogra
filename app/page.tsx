@@ -4,15 +4,15 @@ import { useState } from "react";
 
 const puzzles = [
   {
-    title: "Operacja Orientalis",
-    content: "Twój patrol dotarł do punktu startowego. Wpisz hasło z odprawy, aby rozpocząć rajd."
+    title: "WITAJCIE W KRYPTOGRZE!",
+    content: "Celem gry jest sprawdzenie waszych umiejętności z kryptografi i kryptoanalizy, ale bez obaw te trudne słowa to tylko przykyrwka na dobrze przez was znane przecież szyfry i sposoby kodowania danych prawda? Zobaczymy, w razie jakich kolwiek problemów zgłaszajcie się prosze od mistrza gry i aby rozpocząć musicie się zautoryzować wpisując podane wam wcześniej hasło"
   },
   {
-    title: "Krok 1: Azymut",
-    content: "Zlokalizujcie stare dęby na skraju polany. Jaki kierunek geograficzny wskazuje mech na ich pniach?"
+    title: "1. NA POCZĄTEK...",
+    content: <>Zaczniemy od czegoś prostego co na pewno znacie - szyfry podstawieniowe czyli te które polegają na podstawianiu liter według pewnego klucza na inne litery<br /><br /> SZYFOGRAM: ACHTERSZTAG </>
   },
   {
-    title: "Krok 2: Obozowisko",
+    title: "2.",
     content: "Świetnie! Teraz odpowiedzcie: Gdzie zazwyczaj śpimy na biwaku?"
   },
   {

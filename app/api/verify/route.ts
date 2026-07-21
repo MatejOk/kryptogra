@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 // Pierwsze hasło jest dla etapu 0, drugie dla etapu 1, itd.
 const answers = [
   "orientalis", // Hasło startowe
-  "północ",     // Odpowiedź na zagadkę 1
+  "gchtdysztga",     // Odpowiedź na zagadkę 1
   "namiot"      // Odpowiedź na zagadkę 2
 ];
 
