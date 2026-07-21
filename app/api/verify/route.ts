@@ -7,7 +7,12 @@ const answers = [
   "gchtdysztga",     // Odpowiedź na zagadkę 1
   "90",      // Odpowiedź na zagadkę 2
   "RCHÓR GZŚLT",
-  "orientalis"
+  "orientalis",
+  "szyfrowanie asymetryczne",
+  "Szyfrogram",
+  "klucza publicznego Alicji",
+  "kluczem prywatnym Boba",
+  "szyfrowania symetrycznego",
 ];
 
 export async function POST(request: Request) {

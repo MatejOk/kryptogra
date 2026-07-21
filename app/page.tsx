@@ -33,7 +33,59 @@ const puzzles = [
          "Spójrz uważnie na ten tekst ;D"
   },
   {
-    title: "5. Za mało mało",
+    title: "5. Szyfrowanie symetryczne",
+    content:"Polega na tym że do procesu szyforwania i deszyfrowania używa się tego tego samego klucza, zaletą tych szyfrów jest fakt iż mogą szyfrować BARDZO SZYBKO DUŻĄ ilość danych (co jest na przykład niezbędne to szyfrowania zdjęć czy filmów gdzie ilość danych jest ogromna) Problem natomiast polega natomiast na dystrybujcji klucza czyli jak dwie osoby nie posiadającego bezpiecznego sposobu klucza mają go wybrać aby osoba trzecia go nie podsłuchała? ",
+    image: "/obrazek_rebus_oboz.png"
+  },
+   {
+    title: "6. A pamiętasz??",
+    content:"Zaszyfrowany tekst jawny to:..."
+  },
+   {
+    title: "7. Wracając, szyfrowanie asymetryczne",
+    content:"Polega na szyfrowaniu danych za pomocą dwóch kluczy. \n" +
+            "Klucza prywatnego - ten klucz zna tylko jego właściciel\n"+
+            "Klucz publiczny - ten klucz jest publiczny i znany przez każdego\n"+
+            " \n"+
+            "Można to prównać do sytuacji kiedy Bob chce Alicji wysłać paczkę i mieć pewność aby nikt nie porządany jej nie otworzył. Sytuacja wygląda tak że ma dwie kłóki: swoją i Alicji, oraz jeden klucz do swojej kłódki. Alicja również ma dwie kłódki: swoją i Boba, ale analogicznie klucz tylko do swojej kłóki. Powiedzmy że `kłódka` to klucz publiczny, a `klucz` to klucz prywatny. Jakiego klucza i do kogo należącego powinien użyć Bob aby Alicja mogła otworzyć wiadomość/paczkę"
+
+  },
+   {
+    title: "8. Brawo!",
+    content:"Zrozumiałeś jak działa szyfrowanie asymetryczne, oczywiście w faktycznych implemantacjach jest do szyfrowania używna arytmetyka modularna i duże liczby pierwsze dzięki czemu nasz klucz publiczny i prywanty jest równocześnie `kłódką i kluczem`. Dzięki matematycze właśnie działa mechanizm że wiadomość zaszyfrowana k. publicznym może być odszyfrowana tylko kluczem prywantym, i na odwrót (po prostu są to do siebie liczby odwrtone)\n" +
+    "\n" +
+    "Inna sytuacja: Są 4 osoby: Alicja, Bob, Celina i Dariusz. Każdy ma swój klucz prywatny, oraz klucze publiczne reszty. Powiedzmy że Alicja Dariusz i Celina chcą aby Bob potwierdził że zapoznał się z umową którą otrzymał od reszty. Którym kluczem powien Bob zaszyfrować umowę aby wszytskie pozostałe osoby mogły ją odszyfrować i mieć pewność że tylko Bob mógł zaszyfrować tak tę umowę"
+  },
+   {
+    title: "9. Tego na pewno nie pamiętasz",
+    content:"Żeby szybko zaszyfrować dużą ilość danych użujesz..."
+  },
+  {
+    title: "10. funckje skrótu",
+    content:""
+  },
+   {
+    title: "11. a pamiętasz",
+    content:""
+  },
+   {
+    title: "12. uwierzytelnianie i autoryzajca czyli po co to podwójne logowanie w microsoft",
+    content:""
+  },
+   {
+    title: "algorytm diffiego-hellmana",
+    content:""
+  },
+   {
+    title: "13. a pamiętasz",
+    content:""
+  },
+   {
+    title: "14. Osint",
+    content:""
+  },
+   {
+    title: "15. Koniec",
     content:""
   },
 ];
@@ -96,10 +148,28 @@ export default function Home() {
         {currentPuzzle.title}
       </h1>
       
-      <p className="text-xs sm:text-sm md:text-lg mb-8 text-left w-full max-w-2xl text-gray-100 whitespace-pre-line px-2">
+      <p className="text-base sm:text-lg md:text-xl mb-8 mx-auto w-fit text-center text-gray-100 whitespace-pre-line px-4">
         {currentPuzzle.content}
       </p>
       
+      {/* NOWE: Jeśli zagadka ma obrazek, wyświetl go */}
+      {currentPuzzle.image && (
+        <img 
+          src={currentPuzzle.image} 
+          alt="Podpowiedź do zagadki" 
+          className="mb-8 w-full max-w-md rounded-lg shadow-lg border-2 border-[#facc15]"
+        />
+      )}
+
+      {/* NOWE: Jeśli zagadka ma dźwięk, pokaż odtwarzacz */}
+      {currentPuzzle.audio && (
+        <audio 
+          controls 
+          src={currentPuzzle.audio} 
+          className="mb-8 w-full max-w-xs"
+        />
+      )}
+
       <div className="flex flex-col gap-4 w-full max-w-xs">
         <input 
           type="text" 
