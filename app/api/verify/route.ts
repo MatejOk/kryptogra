@@ -6,7 +6,8 @@ const answers = [
   "orientalis", // Hasło startowe
   "gchtdysztga",     // Odpowiedź na zagadkę 1
   "90",      // Odpowiedź na zagadkę 2
-  "RCHÓR GZŚLT"
+  "RCHÓR GZŚLT",
+  "orientalis"
 ];
 
 export async function POST(request: Request) {
