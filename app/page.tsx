@@ -9,15 +9,27 @@ const puzzles = [
   },
   {
     title: "1. NA POCZĄTEK...",
-    content: <>Zaczniemy od czegoś prostego co na pewno znacie - szyfry podstawieniowe czyli te które polegają na podstawianiu liter według pewnego klucza na inne litery<br /><br /> SZYFOGRAM: ACHTERSZTAG </>
+    content: <>Zaczniemy od czegoś prostego co na pewno znacie - szyfry podstawieniowe czyli te które polegają na podstawianiu liter według pewnego klucza na inne litery lub ustalone znaki. Jest to najpopularniejszy typ szyfrów w naszym środowisku harceskim i skautowym. Są to  między innymi szyfry: czekoladka, gaderypoluki, malinowe buty, szyfr telefonowy czy szyfr cezara. <br /><br /> SZYFOGRAM: ACHTERSZTAG </>
   },
   {
-    title: "2.",
-    content: "Świetnie! Teraz odpowiedzcie: Gdzie zazwyczaj śpimy na biwaku?"
+    title: "2. Kod a Szyfr?",
+    content: <>Dla laików tematu jest to to samo, ale czy jest tak na pewno?<br/><br/> Otóż nie zaskoczę was ale NIE, to nie jest to samo.<br/><br/>SZYFROWANIE - jest to czynność polegająca na przekształacaniu tekstu jawnego do postaci nieczytelnej dla osób nie posiadających klucza.<br/><br/>KODOWANIE - zmiana zapisu danych tak żeby mogłby być łatwiej np. przesłane dalej, zapisane lub odczytane<br/><br/>Zatem odpowiedzią jest liczba: 1011010 zakodowana w systemie dziesiętnym :D </>
   },
   {
-    title: "Koniec Trasy!",
-    content: "Gratulacje! Odnaleźliście wszystkie punkty. Zgłoście się do bazy."
+    title: "3. Trochę Teorii",
+    content: <>Alfabet - Zbiór wszystkich dostępnych znaków (np. litery, cyfry, znaki specjalne), z których zbudowana jest wiadomość przed lub po zaszyfrowaniu.<br/><br/>Tekst jawny - Twoja oryginalna, czytelna wiadomość przed ukryciem. To zrozumiałe dane, które chcesz zabezpieczyć.<br/><br/> Szyfrogram - wynik procesu szyfrowania.<br/><br/>Szyfr - Konkretny algorytm matematyczny lub zbiór ścisłych reguł postępowania, które instruują, w jaki sposób zamienić tekst jawny na szyfrogram (i z powrotem).<br/><br/> Szyfrogram to "tekst jawny" a szyfrem jest szyfr cezara (o 3 litery w prawo ide podczas szyfrowania) z polskim alfabetem. <br/><br/> ps. polski alfabet ma 32 znaki</>
+  },
+  {
+    title: "4. Steganografia",
+    content: "To trochę inny sposób polegający na ukrywaniu\n" +
+             "Absolutnie wszystkich danych, ale nie w sposób jawny,\n" +
+             "Jak robi to kryptografia. Zapewnia on bezpieczeństwo,\n" +
+             "Eliminując u osób postronnych świadomość istnienia\n" +
+             "Materiałów i faktu ich przesyłania. Właśnie po to, by nikt\n" +
+             "Niczego nie podejrzewał, wymyślono różne metody.\n" +
+             "Idealnym przykładem są pierwsze litery w każdym wierszu,\n" +
+             "Często używano też sympatycznego atramentu (sok z cytryny).\n" +
+             "Albo stosowano historyczne mikrokropki przyklejane w listach."
   }
 ];
 
@@ -79,7 +91,7 @@ export default function Home() {
         {currentPuzzle.title}
       </h1>
       
-      <p className="text-lg mb-8 text-center max-w-md text-gray-100">
+      <p className="text-lg mb-8 text-center max-w-md text-gray-100 whitespace-pre-line">
         {currentPuzzle.content}
       </p>
       

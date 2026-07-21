@@ -5,7 +5,8 @@ import { NextResponse } from "next/server";
 const answers = [
   "orientalis", // Hasło startowe
   "gchtdysztga",     // Odpowiedź na zagadkę 1
-  "namiot"      // Odpowiedź na zagadkę 2
+  "90",      // Odpowiedź na zagadkę 2
+  "RCHÓR GZŚLT"
 ];
 
 export async function POST(request: Request) {
