@@ -21,16 +21,21 @@ const puzzles = [
   },
   {
     title: "4. Steganografia",
-    content: "To trochę inny sposób polegający na ukrywaniu\n" +
-             "Absolutnie wszystkich danych, ale nie w sposób jawny,\n" +
-             "Jak robi to kryptografia. Zapewnia on bezpieczeństwo,\n" +
-             "Eliminując u osób postronnych świadomość istnienia\n" +
-             "Materiałów i faktu ich przesyłania. Właśnie po to, by nikt\n" +
-             "Niczego nie podejrzewał, wymyślono różne metody.\n" +
-             "Idealnym przykładem są pierwsze litery w każdym wierszu,\n" +
-             "Często używano też sympatycznego atramentu (sok z cytryny).\n" +
-             "Albo stosowano historyczne mikrokropki przyklejane w listach."
-  }
+    content: "Omawiany tu tajny sposób\n" +
+         "raczej omija szyfrowanie.\n" +
+         "informacja jest widoczna,\n" +
+         "ewidentnie, jak na tacy.\n" +
+         "nikt jednak nie wie o niej.\n" +
+         "To właśnie steganografia!\n" +
+         "atrament z soku cytryny,\n" +
+         "lub kropka w starym liście.\n" +
+         "Inne to ostatnie litery...\n" +
+         "Spójrz uważnie na ten tekst ;D"
+  },
+  {
+    title: "5. Za mało mało",
+    content:""
+  },
 ];
 
 export default function Home() {
