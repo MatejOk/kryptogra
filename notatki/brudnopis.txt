@@ -12,7 +12,10 @@ git commit -m "Dodanie nowych zagadek o wezlach"
 git push
 (To polecenie "wysyła" zapakowane zmiany na serwery GitHuba).
 
-
+{
+    title: "3. Trochę Teorii",
+    content:""
+  },
 
 
 export default function Home() {

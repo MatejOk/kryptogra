@@ -7,6 +7,8 @@ type Puzzle = {
   content: string;
   image?: string;
   audio?: string;
+  content2?: string; 
+  image2?: string;
 };
 
 const puzzles: Puzzle[] = [
@@ -33,7 +35,7 @@ const puzzles: Puzzle[] = [
     "Tekst jawny - Twoja oryginalna, czytelna wiadomość przed ukryciem. To zrozumiałe dane, które chcesz zabezpieczyć.\n"+
     "Szyfrogram - wynik procesu szyfrowania.\n"+
     "Szyfr - Konkretny algorytm matematyczny lub zbiór ścisłych reguł postępowania, które instruują, w jaki sposób zamienić tekst jawny na szyfrogram (i z powrotem).\n"+
-    "Szyfrogram to `tekst jawny` a szyfrem jest szyfr cezara (o 3 litery w prawo ide podczas szyfrowania) z polskim alfabetem.\n"+
+    "Szyfrogram to `tekst jawny` a szyfrem jest szyfr cezara (o 3 litery w prawo ide podczas szyfrowania) z polskim alfabetem. Tekst jawny otrzymany po zdeszyfrowaniu szyfrogramu jest hasłem\n"+
     "ps. polski alfabet ma 32 znaki\n"
   },
   {
@@ -64,46 +66,78 @@ const puzzles: Puzzle[] = [
             "Klucza prywatnego - ten klucz zna tylko jego właściciel\n"+
             "Klucz publiczny - ten klucz jest publiczny i znany przez każdego\n"+
             " \n"+
-            "Można to prównać do sytuacji kiedy Bob chce Alicji wysłać paczkę i mieć pewność aby nikt nie porządany jej nie otworzył. Sytuacja wygląda tak że ma dwie kłóki: swoją i Alicji, oraz jeden klucz do swojej kłódki. Alicja również ma dwie kłódki: swoją i Boba, ale analogicznie klucz tylko do swojej kłóki. Powiedzmy że `kłódka` to klucz publiczny, a `klucz` to klucz prywatny. Jakiego klucza i do kogo należącego powinien użyć Bob aby Alicja mogła otworzyć wiadomość/paczkę"
+            "Można to porównać do sytuacji, w której Bob chce wysłać Alicji paczkę i mieć absolutną pewność, że nikt niepożądany jej nie otworzy. Sytuacja wygląda tak: Bob ma do dyspozycji dwie otwarte kłódki – swoją oraz Alicji, ale posiada w kieszeni kluczyk pasujący tylko do swojej własnej kłódki. Alicja jest w identycznej sytuacji: ma pod ręką otwartą kłódkę swoją oraz Boba, jednak posiada kluczyk wyłącznie do swojej kłódki. Załóżmy, że otwarta kłódka to klucz publiczny (każdy może ją wziąć i zatrzasnąć), a pasujący do niej kluczyk to klucz prywatny (ma go tylko właściciel). Czyjej kłódki (klucza publicznego) powinien użyć Bob do zamknięcia paczki, aby mieć pewność, że tylko Alicja będzie w stanie ją rozpakować? \n"+
+            "\n"+
+            "ps. odpowiedź wpisz w bezokoliczniku"
 
   },
    {
     title: "8. Brawo!",
-    content:"Zrozumiałeś jak działa szyfrowanie asymetryczne, oczywiście w faktycznych implemantacjach jest do szyfrowania używna arytmetyka modularna i duże liczby pierwsze dzięki czemu nasz klucz publiczny i prywanty jest równocześnie `kłódką i kluczem`. Dzięki matematycze właśnie działa mechanizm że wiadomość zaszyfrowana k. publicznym może być odszyfrowana tylko kluczem prywantym, i na odwrót (po prostu są to do siebie liczby odwrtone)\n" +
+    content:"Zrozumiałeś jak działa szyfrowanie asymetryczne, oczywiście w faktycznych implemantacjach jest do szyfrowania używna arytmetyka modularna i duże liczby pierwsze dzięki czemu nasz klucz publiczny i prywanty jest równocześnie `kłódką i kluczem`. Właśnie dzięki matematyce działa ten mechanizm że wiadomość zaszyfrowana k. publicznym może być odszyfrowana tylko kluczem prywantym, i na odwrót (po prostu są to do siebie liczby odwrtone)\n" +
     "\n" +
-    "Inna sytuacja: Są 4 osoby: Alicja, Bob, Celina i Dariusz. Każdy ma swój klucz prywatny, oraz klucze publiczne reszty. Powiedzmy że Alicja Dariusz i Celina chcą aby Bob potwierdził że zapoznał się z umową którą otrzymał od reszty. Którym kluczem powien Bob zaszyfrować umowę aby wszytskie pozostałe osoby mogły ją odszyfrować i mieć pewność że tylko Bob mógł zaszyfrować tak tę umowę. Jakim kluczem Bob powienien szyfrować?"
+    "Inna sytuacja: Są 4 osoby: Alicja, Bob, Celina i Dariusz. Każdy ma swój klucz prywatny, oraz klucze publiczne reszty. Powiedzmy że Alicja Dariusz i Celina chcą aby Bob potwierdził że zapoznał się z umową którą otrzymał od reszty. Którym kluczem powienien Bob zaszyfrować umowę aby wszytskie pozostałe osoby mogły ją odszyfrować i mieć pewność że tylko Bob mógł zaszyfrować tak tę umowę. Jakim kluczem Bob powienien szyfrować?\n"+
+    "\n"+
+    "ps. odpowiedź wpisz w bezokoliczniku"
   },
    {
-    title: "9. Tego na pewno nie pamiętasz",
+    title: "9. A czy to pamiętasz??",
     content:"Żeby szybko zaszyfrować dużą ilość danych użujesz..."
   },
   {
-    title: "10. opis podpisu",
-    content:""
+    title: "10. Podpis cyfrowy i uwierzytelnianie",
+    content:"Wracając w taki właśnie sposób jak opisałem wcześniej działa nasz podpis cyfrowy dzięki któremu możemy uwierzytelnić się że Ja to Ja, a czemu to takie ważne?\n"+
+    "\n"+
+    "A no żeby ktoś nie wziął na nas pożyczki, nie podpisał umowy z którą się nie zapoznaliśmy albo nie pasowały nam jej warunki albo po prostu okradł nas z danych bądź pieniędzy. (W Polsce jak i całej Unii Europejskiej kwalifikowany podpis elektroniczy stoi na RÓWNI z tradycyjnym podpisem)\n"+
+    "\n"+
+    "A czym jest to uwierzytelnianie? - potwierdzenie czyjejś tożsamości wobec innej jednostki, służy temu aby właśnie nie doszło do sytuacji wymienionych powyżej\n"+
+    "\n"+
+    "Uwierzytelniając się potwierdzasz swoją..."
+  },
+  {
+    title: "11. Czy istnieje szyfr idealny nie do złamania?",
+    content:"Teoretycznie tak, musi on natomiast spełniać określone warunki: \n"+
+    "1. Długość klucza jest równa długości tekstu jawnego\n"+
+    "2. Każdy klucz jest używany jeden raz\n"+
+    "3. Klucz jest w pełni losowy\n"+
+    "\n"+
+    "Wtedy przy użyciu np. szyfru Vigenera możemy zaszyfrować dowolnie wielką wiadomość tak aby była nie do odszyfrowania\n"+
+    "\n"+
+    "Szyfr Vignera polega na porównywaniu ze sobą liter z tekstu jawnego i klucza według macierzy, przykład np. dla klucza `koty` i tekstu jawnego `pies`, otrzymujemy szyfrogram: ZWXQ ",
+    image: "/jak_szyfrować.png",
+    content2: 'Teraz musisz zaszyfrować tekst jawny: "bukszpryt", a kluczem do niego jest "fordewind", szyfrogram jest hasłem które potrzebujesz wpisać',
+    image2: "/szyfry-vigenerea.png"
+  },
+  {
+    title: "12. Protokuł Diffiego-Hellmana",
+    content:"Skoro jest to szyfr idealny to czemu się go nie używa zawsze i wszędzie?\n"+
+    "\n"+
+    "A no dlatego że transportowanie klucza który jest tej samej długości co tekst jawny generuje kolejny problem, jak przekazać tajny klucz aby na pewno nikt nie poznał jego treści - i w taki sposób się zapętlamy bo chcąc zachować poufność tekstu jawnego, musimy przekazać klucz tej samej wielkość też poufnie\n"+
+    "\n"+
+    "Czyli wracamy do szyfrowania symetrycznego i asymetrycznego gdzie również potrzebujemy klucza żeby zachować poufność wiadomości, ALE nie nie tak dużego jak sam tekst jawny. Najpopularniejszym sposobem ustania klucza jest protokuł Diffiego-Hellmana, który można przedstawić na podstawie mieszania kolorów",
+    image: "/deffie_zagadak.png",
+    content2: "Bob i Alicja mają wspólny publiczny kolor (żółty) i po jednym swoim prywatnym (Alicja - pomarańczowy, a Bob - niebieski), mieszją swój prywatny kolor z publicznym i wysyłają mieszankę do drugiej osoby. Ktoś transpotujący nie wie jakie są prywante kolory Boba i Alicji ale trzyma ich mieszanki. Kiedy Bob i Alicja otrzymają miesznakę od dugiej osoby, dodają tam swój prywanty kolor i każdy z nich otrzymuje końcowo ten sam kolor\n"+
+    "\n"+
+    "Jaki kolor musi dodać do otrzymanej mieszanki z obrazka Alicja aby otrzymać taki sam kolor jak Bob?"
   },
    {
-    title: "11. funkcje skrótu",
-    content:""
+    title: "13. ",
+    content:"Do szyfrowania asymetrycznego jest potrzebny klucz prywanty i klucz..."
   },
    {
-    title: "12. uwierzytelnianie i autoryzajca czyli po co to podwójne logowanie w microsoft",
-    content:""
+    title: "14. Biały wywiad (OSINT) ",
+    content:"OSINT - Open Source Intelligence czyli biały wywiad polegający na pozyskiwaniu i analizowania informacji z publicznie dostępnych źródeł, takich jak Internet, rejestry publiczne czy media społecznościowe.\n"+
+    "\n"+
+    "Na początek coś prostego, w jakim mieście znajduje się figurant?",
+    image:"/osint_final.png"
+  },
+  {
+    title: "15. Fragment rozmowy (OSINT)",
+    content:"Udało się przechwycić fragment nieszyfrowanej rozmowy dwóch osób, w jakim mieście znajdował się figurant od 18.37, 15 lipca?",
+    image:"/zapis_rozmowy.png"
   },
    {
-    title: "algorytm diffiego-hellmana",
-    content:""
-  },
-   {
-    title: "13. a pamiętasz",
-    content:""
-  },
-   {
-    title: "14. Osint",
-    content:""
-  },
-   {
-    title: "15. Koniec",
-    content:""
+    title: "Gratulacje!!!",
+    content:"Udało Ci się przejść całą kryptogrę - zgłoś się do mistrza gra!"
   },
 ];
 
@@ -177,7 +211,21 @@ export default function Home() {
           className="mb-8 w-full max-w-md rounded-lg shadow-lg border-2 border-[#facc15]"
         />
       )}
+      {/* NOWE: Drugi tekst (pojawia się pod pierwszym obrazkiem) */}
+      {currentPuzzle.content2 && (
+        <p className="text-base sm:text-lg md:text-xl mb-8 mx-auto w-fit text-center text-gray-100 whitespace-pre-line px-4">
+          {currentPuzzle.content2}
+        </p>
+      )}
 
+      {/* NOWE: Drugi obrazek (pojawia się pod drugim tekstem) */}
+      {currentPuzzle.image2 && (
+        <img 
+          src={currentPuzzle.image2} 
+          alt="Druga podpowiedź do zagadki" 
+          className="mb-8 w-full max-w-md rounded-lg shadow-lg border-2 border-[#facc15]"
+        />
+      )}
       {/* NOWE: Jeśli zagadka ma dźwięk, pokaż odtwarzacz */}
       {currentPuzzle.audio && (
         <audio 

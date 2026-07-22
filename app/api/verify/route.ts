@@ -3,16 +3,22 @@ import { NextResponse } from "next/server";
 // To jest nasza tajna lista haseł. Gracze nigdy nie zobaczą tego kodu.
 // Pierwsze hasło jest dla etapu 0, drugie dla etapu 1, itd.
 const answers = [
-  "orientalis", // Hasło startowe
+  "start!", // Hasło startowe
   "gchtdysztga",     // Odpowiedź na zagadkę 1
   "90",      // Odpowiedź na zagadkę 2
   "RCHÓR GZŚLT",
   "orientalis",
   "szyfrowanie asymetryczne",
   "Szyfrogram",
-  "klucza publicznego Alicji",
-  "kluczem prywatnym Boba",
+  "klucz publiczny Alicji",
+  "klucz prywatny Boba",
   "szyfrowania symetrycznego",
+  "tożsamość",
+  "GIBVDLZLW",
+  "Pomarańczowy",
+  "publiczny",
+  "Paryż",
+  "Sanok"
 ];
 
 export async function POST(request: Request) {
